@@ -37,42 +37,7 @@ msf auxiliary(scanner/ssh/ssh_enumusers) > run
 
 ---
 
-## Transcripciones (texto literal)
-
 ### (ssh_enumusers)
-
-```
-msf auxiliary(scanner/ssh/ssh_enumusers) > run
-[*] 172.17.0.2:22 - SSH - Using malformed packet technique
-[*] 172.17.0.2:22 - SSH - Checking for false positives
-[*] 172.17.0.2:22 - SSH - Starting scan
-[+] 172.17.0.2:22 - SSH - User '_apt' found
-[+] 172.17.0.2:22 - SSH - User 'backup' found
-[+] 172.17.0.2:22 - SSH - User 'bin' found
-[+] 172.17.0.2:22 - SSH - User 'daemon' found
-[+] 172.17.0.2:22 - SSH - User 'games' found
-[+] 172.17.0.2:22 - SSH - User 'gnats' found
-[+] 172.17.0.2:22 - SSH - User 'irc' found
-[+] 172.17.0.2:22 - SSH - User 'list' found
-[+] 172.17.0.2:22 - SSH - User 'lp' found
-[+] 172.17.0.2:22 - SSH - User 'mail' found
-[+] 172.17.0.2:22 - SSH - User 'man' found
-[+] 172.17.0.2:22 - SSH - User 'news' found
-[+] 172.17.0.2:22 - SSH - User 'nobody' found
-[+] 172.17.0.2:22 - SSH - User 'proxy' found
-[+] 172.17.0.2:22 - SSH - User 'root' found
-[+] 172.17.0.2:22 - SSH - User 'sync' found
-[+] 172.17.0.2:22 - SSH - User 'sys' found
-[+] 172.17.0.2:22 - SSH - User 'uucp' found
-[+] 172.17.0.2:22 - SSH - User 'www-data' found
-[*] Scanned 1 of 1 hosts (100% complete)
-[*] Auxiliary module execution completed
-msf auxiliary(scanner/ssh/ssh_enumusers) >
-```
-
----
-
-### (ssh_enumusers) — ejecución repetida
 
 ```
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
