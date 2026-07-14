@@ -33,8 +33,6 @@ msf auxiliary(scanner/ssh/ssh_enumusers) > set USER_FILE /ruta/a/rockyou.txt   #
 msf auxiliary(scanner/ssh/ssh_enumusers) > run
 ```
 
-> Nota importante: Las capturas de pantalla proporcionadas muestran salidas con la IP `172.17.0.2`. A continuación transcribo el texto exacto de las salidas para evitar confusiones — las transcripciones se muestran como texto literal y están claramente separadas del resto del writeup.
-
 ---
 
 ### (ssh_enumusers)
@@ -100,8 +98,6 @@ uid=0(root) gid=0(root) groups=0(root)
 root@79cb2b6fc8fb:~#
 ```
 
-> Nota: He mantenido las líneas literales tal como aparecen en las capturas y he acortado el banner de sistema con "... (banner omitted)" para que la transcripción sea legible; si prefieres la transcripción completa del banner, lo incluyo.
-
 ---
 
 ## 3) Fuerza bruta con Hydra ⚔️
@@ -117,7 +113,7 @@ Resultado (en el entorno de trabajo):
 
 ---
 
-## 4) Acceso SSH 🛠️
+## 4) Acceso SSH ���️
 Se inició sesión SSH con las credenciales encontradas:
 
 ```bash
